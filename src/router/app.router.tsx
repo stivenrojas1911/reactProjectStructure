@@ -1,37 +1,36 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { 
-    Error404Component, 
-    HomeComponent, 
-    LoginComponent, 
-    NestedIndexRoute, 
-    NestedRouteOne, 
-    NestedRouteTwo, 
-    PrivateRouteComponent, 
-    PublicRouteComponent 
-} from '../components/test-components.component';
+import {PublicRouteComponent} from '../pages/publicRoute/publicRoute.page';
+import {LoginPage} from '../pages/login/login.page';
+import {HomePage} from '../pages/home/home.page';
+import {Error404Page} from '../pages/error404/error404.page';
+import {PrivateRoutePage} from '../pages/privateRoute/privateRoute.page'
+import {NestedIndexRouteComponent} from '../components/nestedIndexRoute/nestedIndexRoute.component'
+import {NestedRouteOneComponent} from '../components/nestedRouteOne/nestedRouteOne.component'
+import {NestedRouteTwoComponent} from '../components/nestedRouteTwo/nestedRouteTwo.component'
+
 import  App  from '../App'
 import BaseGuard from './guards/base.guard';
-import PrivateRouteGuard from './guards/private-route.guard';
+
 
 // import stiven's components 
-import Component1 from '../components/component1';
-import ComponentA from '../components/componentA';
-import ComponentB from '../components/componentB';
+import Component1 from '../pages/page1/page1.page';
+import ComponentA from '../components/componentA/componentA.component';
+import ComponentB from '../components/componentB/componentB.component';
 
 const AppRouter = () => {
     return (
         <BrowserRouter>
             <Routes>
                 <Route element={<App />}>
-                    <Route path="/" element={<HomeComponent />}/>
-                    <Route path="/login" element={<LoginComponent />} />
+                    <Route path="/" element={<HomePage />}/>
+                    <Route path="/login" element={<LoginPage />} />
                     <Route path="/public-route" element={<PublicRouteComponent />}/>
-                    <Route path="/private-route" element={<BaseGuard ><PrivateRouteComponent /></BaseGuard>}>
-                        <Route index element={<NestedIndexRoute />}/>
-                        <Route path="nested-route-one" element={<NestedRouteOne />}/>
-                        <Route path="nested-route-two" element={<PrivateRouteGuard><NestedRouteTwo /></PrivateRouteGuard>}/>
+                    <Route path="/private-route" element={<BaseGuard ><PrivateRoutePage /></BaseGuard>}>
+                        <Route index element={<NestedIndexRouteComponent />}/>
+                        <Route path="nested-route-one" element={<NestedRouteOneComponent />}/>
+                        <Route path="nested-route-two" element={<NestedRouteTwoComponent />}/>
                     </Route>
-                    <Route path="*" element={<Error404Component />} />
+                    <Route path="*" element={<Error404Page />} />
                 </Route>
 
                 <Route path="/stiven" element={<Component1 />}>

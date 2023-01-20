@@ -1,5 +1,6 @@
 import { ReactElement, useState } from 'react';
-import { Navigate, RouteProps} from "react-router-dom";
+//import {  RouteProps} from "react-router-dom";
+import { Navigate} from "react-router-dom";
 
 
 // to consult the store
@@ -12,7 +13,7 @@ interface IBaseGuardProps  { // extends RouteProps {
 
 const BaseGuard = ({ children }: IBaseGuardProps) => {
 
-    const logged=useAppSelector((state: RootState) => state.entityA.isLogin)
+    const logged=useAppSelector((state: RootState) => state.user.isLogin)
 
     const [ isLogged ] = useState<boolean>(logged);
 

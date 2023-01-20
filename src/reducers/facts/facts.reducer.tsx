@@ -1,4 +1,4 @@
-import {Fact} from './../../models/fact';
+import {Fact} from '../../models/fact.model';
 import {getFactsData} from '../../thunks/facts.thunk'
 
 import {  createSlice } from '@reduxjs/toolkit';

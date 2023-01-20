@@ -1,6 +1,6 @@
 
-import { useAppDispatch} from '../hook.store';
-import {getAnomin} from '../reducers/entityB/entityB.reducer'
+import { useAppDispatch} from '../../hook.store';
+import {getAnomin} from '../../reducers/entityB/entityB.reducer'
 
 
 const ComponentA = () =>{

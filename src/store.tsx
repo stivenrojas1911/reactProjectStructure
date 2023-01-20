@@ -1,14 +1,14 @@
 import {configureStore} from '@reduxjs/toolkit';
 
 // import reducers
-import {entityAReducer} from './reducers/entityA/entityA.reducer';
+import {userReducer} from './reducers/user/user.reducer';
 import {entityBreducer} from './reducers/entityB/entityB.reducer'
 import {factsReducer} from './reducers/facts/facts.reducer'
 
 
 export const store= configureStore({
     reducer:{
-        entityA:entityAReducer, 
+        user:userReducer, 
         entityB:entityBreducer,
         facts:factsReducer,
        

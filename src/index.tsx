@@ -9,8 +9,7 @@ import {store} from './store';
 // import provider from redux toolkit
 import { Provider } from 'react-redux';
 
-//import backdrop
-import {SimpleBackdrop} from './../src/components/backdrop'
+
 
 ReactDOM.render( 
   <React.StrictMode>

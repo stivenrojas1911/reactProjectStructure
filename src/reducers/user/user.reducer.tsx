@@ -10,7 +10,7 @@ export interface LoginState {
   }
 
 
-  const entityASlice= createSlice( {
+  const userSlice= createSlice( {
     
     name:'entityA',
     initialState:initialLoginState,
@@ -30,6 +30,8 @@ export interface LoginState {
   })
 
 
-  console.log("entityASlice.reduce:", entityASlice.reducer);
-  export const entityAReducer = entityASlice.reducer;
-  export const {userIsLoggeed, userNotLogged } = entityASlice.actions
+  console.log("entityASlice.reduce:", userSlice.reducer);
+
+
+  export const userReducer = userSlice.reducer;
+  export const {userIsLoggeed, userNotLogged } = userSlice.actions

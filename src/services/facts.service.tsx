@@ -1,4 +1,4 @@
-import {Fact} from '../models/fact'
+import {Fact} from '../models/fact.model'
 import axios from 'axios';
 
 
