@@ -6,8 +6,8 @@ import {factsSelector} from '../../reducers/facts/facts.selector'
 
 import {useAppSelector} from '../../hook.store'
 
-import {Fact} from '../../models/fact.model';
-import {SimpleBackdrop} from '../../components/backdrop/backdrop.component'
+import {FactModel} from '../../models/fact.model';
+import {SimpleBackdropComponent} from '../../components/backdrop/backdrop.component'
 
 
 const Page1 = ()=>{
@@ -18,10 +18,10 @@ const Page1 = ()=>{
 
     const dispatch = useAppDispatch();
     
-    const facts:Fact[]|null|undefined = useAppSelector(factsSelector)
+    const facts:FactModel[]|null|undefined = useAppSelector(factsSelector)
 
     const factsList= facts === null ||facts === undefined ? facts : facts
-                                                .map((fact:Fact, index) =>{
+                                                .map((fact:FactModel, index) =>{
                                                     return <ul key={index.toString()}>{fact.fact}</ul>
                                                 })
 
@@ -32,7 +32,7 @@ const Page1 = ()=>{
             <h1>Hi, I am the component Number 1 😎</h1>
             
             {facts===undefined?<p>undefined</p>:<p>not undefined</p>}
-            {<SimpleBackdrop loading={facts===undefined?true:false}/>}
+            {<SimpleBackdropComponent loading={facts===undefined?true:false}/>}
             
 
             <button onClick={

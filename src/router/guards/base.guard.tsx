@@ -5,7 +5,7 @@ import { Navigate} from "react-router-dom";
 
 // to consult the store
 import { useAppSelector} from '../../hook.store';
-import {RootState} from '../../store'
+import {userSelector} from './../../reducers/user/user.selector';
 
 interface IBaseGuardProps  { // extends RouteProps {
     children: ReactElement;
@@ -13,7 +13,7 @@ interface IBaseGuardProps  { // extends RouteProps {
 
 const BaseGuard = ({ children }: IBaseGuardProps) => {
 
-    const logged=useAppSelector((state: RootState) => state.user.isLogin)
+    const logged=useAppSelector(userSelector)
 
     const [ isLogged ] = useState<boolean>(logged);
 

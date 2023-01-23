@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { Fact } from '../models/fact.model';
+import { FactModel } from '../models/fact.model';
 import { getFacts } from '../services/facts.service';
 
 // import model error
@@ -7,7 +7,7 @@ import {ServiceErrorModel} from '../models/serviceError.model'
 
 export const getFactsData = createAsyncThunk(
   'facts/getFactsData',
-    async (param:{value:string, key:string}, thunkAPI):Promise<Fact[]|null> => {
+    async (param:{value:string, key:string}, thunkAPI):Promise<FactModel[]|null> => {
       try{
 
         const resp = await getFacts(param?.key, param?.value)

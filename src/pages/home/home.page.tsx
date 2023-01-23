@@ -5,10 +5,10 @@ import './home.page.scss';
 import './../../sass/generalStyles.scss'
 
 import { useAppSelector} from '../../hook.store';
-import {entityASelect} from '../../reducers/user/user.selector'
+import {userSelector} from '../../reducers/user/user.selector'
 
 export const HomePage = () => {
-    const logged=useAppSelector(entityASelect)
+    const logged=useAppSelector(userSelector)
     
     return (
         <div className="home" >

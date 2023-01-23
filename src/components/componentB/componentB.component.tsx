@@ -1,6 +1,6 @@
 
 
-import {entityASelect} from '../../reducers/user/user.selector';
+import {userSelector} from '../../reducers/user/user.selector';
 
 // to consult the state of the entityB slice 
 import { entityBSelect } from '../../reducers/entityB/entityB.selector';
@@ -9,9 +9,9 @@ import { entityBSelect } from '../../reducers/entityB/entityB.selector';
 import {useAppSelector} from '../../hook.store'
 
 
-const ComponentB = () =>{
+const ComponentBComponent = () =>{
 
-    const logged=useAppSelector(entityASelect)
+    const logged=useAppSelector(userSelector)
     const name= useAppSelector(entityBSelect)
 
     return (
@@ -28,4 +28,4 @@ const ComponentB = () =>{
     )
 }
 
-export default ComponentB;
+export default ComponentBComponent;

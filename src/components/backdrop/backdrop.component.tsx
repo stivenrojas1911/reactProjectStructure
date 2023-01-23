@@ -7,7 +7,7 @@ export interface LoadingProps{
     loading: boolean;
 }
 
-export  function SimpleBackdrop(loadingProps:LoadingProps) {
+export  function SimpleBackdropComponent(loadingProps:LoadingProps) {
  
   return (
     <div>

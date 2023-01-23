@@ -1,11 +1,9 @@
-import {Fact} from '../../models/fact.model';
+import {FactModel} from '../../models/fact.model';
 import {getFactsData} from '../../thunks/facts.thunk'
 
-import {  createSlice } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
+import {FactState} from './../../models/store/fact-state.model'
 
-interface FactState {
-    facts: Fact[]|null|undefined;
-  }
   
   const initialState: FactState = {
     facts: [],

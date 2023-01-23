@@ -3,7 +3,7 @@
 import { useAppDispatch} from '../../hook.store';
 import { useAppSelector} from '../../hook.store';
 // import selector of login state
-import {entityASelect} from '../../reducers/user/user.selector'
+import {userSelector} from '../../reducers/user/user.selector'
 
 
 
@@ -17,7 +17,7 @@ export const LoginPage = () => {
 
     
 
-    const logged=useAppSelector(entityASelect)
+    const logged=useAppSelector(userSelector)
     
     const dispatch = useAppDispatch();
     

@@ -1,10 +1,8 @@
 import {createSlice} from '@reduxjs/toolkit';
+import {NameState} from './../../models/store/name-state.model'
 
 
 
-export interface NameState {
-    name: string;
-  }
   
   const initialNameState: NameState = {
     name: '',
