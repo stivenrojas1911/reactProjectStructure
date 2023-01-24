@@ -12,7 +12,8 @@ export const HomePage = () => {
     
     return (
         <div className="home" >
-           <h1>Soy el Home</h1>
+           <h1>I am the Home</h1>
+           <h1>{process.env.REACT_APP_VARIABLE}</h1>
            
            
            <p>{logged===true?'I am logged':'I am logout'}</p>
