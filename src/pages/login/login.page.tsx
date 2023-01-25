@@ -6,10 +6,13 @@ import { useAppSelector} from '../../hook.store';
 import {userSelector} from '../../reducers/user/user.selector'
 
 
-
 import {userIsLoggeed, userNotLogged} from '../../reducers/user/user.reducer';
 import { NavLink } from 'react-router-dom';
 
+//import form component
+import {FormComponent} from './../../components/form/form.component'
+
+//import styles
 import './login.scss'
 
 
@@ -26,6 +29,8 @@ export const LoginPage = () => {
          <div className="login">
              <h1>Soy la pantalla de login</h1>
              <p>is logged: {logged===true?'Logged':'not logged'}</p>
+
+             <FormComponent/>
  
              <button onClick={()=>{
                                    dispatch(userIsLoggeed())

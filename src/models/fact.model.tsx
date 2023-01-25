@@ -1,4 +1,4 @@
 export class FactModel{
-    public fact:string='';
-    public length:number=0;
+    fact:string;
+    length:number;
 }

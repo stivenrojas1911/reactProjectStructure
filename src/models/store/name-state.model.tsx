@@ -1,3 +1,3 @@
 export class NameState {
-    name: string=''
+    name: string;
   }

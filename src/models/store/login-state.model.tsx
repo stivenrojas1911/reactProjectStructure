@@ -1,3 +1,3 @@
 export class LoginState {
-    public isLogin: boolean=false;
+    isLogin: boolean;
   }
