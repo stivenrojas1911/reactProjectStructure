@@ -3,18 +3,15 @@ import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
 
 
-export interface LoadingProps{
-    loading: boolean;
-}
 
-export  function SimpleBackdropComponent(loadingProps:LoadingProps) {
+const SimpleBackdropComponent = () => {
  
   return (
     <div>
       
       <Backdrop
         sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
-        open={loadingProps.loading}
+        open={true}
         
       >
         <CircularProgress color="inherit" />
@@ -22,3 +19,5 @@ export  function SimpleBackdropComponent(loadingProps:LoadingProps) {
     </div>
   );
 }
+
+export default SimpleBackdropComponent;

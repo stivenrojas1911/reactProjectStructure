@@ -24,7 +24,7 @@ export const getFactsData = createAsyncThunk(
         }
 
         const error:ServiceErrorModel= err;
-        console.log("status: ", error.response.status)
+        console.log("status: ", error.response.status); // pending...
   
         return null;
 

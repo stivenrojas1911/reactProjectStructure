@@ -7,23 +7,37 @@ import {factsSelector} from '../../reducers/facts/facts.selector'
 import {useAppSelector} from '../../hook.store'
 
 import {FactModel} from '../../models/fact.model';
-import {SimpleBackdropComponent} from '../../components/backdrop/backdrop.component'
+import SimpleBackdropComponent from '../../components/backdrop/backdrop.component'
+import { AsyncStatusEnum } from '../../enums/asyncStatusEnum';
+
+
+// import enum
 
 
 const Page1 = ()=>{
   
    
 
-    
+    /**
+     * Here, only put the only the logic related with the event handler
+     *  hooks, eventHandlers
+     */
 
-    const dispatch = useAppDispatch();
+    const dispatch = useAppDispatch();//ok
     
-    const facts:FactModel[]|null|undefined = useAppSelector(factsSelector)
+    const facts = useAppSelector((state)=>state.facts)//ok
 
-    const factsList= facts === null ||facts === undefined ? facts : facts
-                                                .map((fact:FactModel, index) =>{
-                                                    return <ul key={index.toString()}>{fact.fact}</ul>
-                                                })
+    const handleSearchButtonClick = () =>{
+
+        // here we can not put any business logic ** important
+        // only we can have a SetState  of useState
+        // the bussiness have to be in the helpers
+        // Inside of any hook we can not put business logic
+
+        dispatch(getFactsData({value:'',key:''})) 
+
+    }//ok
+
 
     
     return (
@@ -31,30 +45,13 @@ const Page1 = ()=>{
         <div>
             <h1>Hi, I am the component Number 1 😎</h1>
             
-            {facts===undefined?<p>undefined</p>:<p>not undefined</p>}
-            {<SimpleBackdropComponent loading={facts===undefined?true:false}/>}
+            {facts.status=== AsyncStatusEnum.loading && <SimpleBackdropComponent/>}
             
+            <button onClick={handleSearchButtonClick}>Search</button>
 
-            <button onClick={
-                ()=>{
-                        try{
+            { facts.content &&  facts.content.map((fact:FactModel, index) => <ul key={index.toString()}>{fact.fact}</ul>)}
 
-                        dispatch(getFactsData({value:'',key:''}))
-
-                     
-
-
-                        
-                        }catch(e){
-                            console.log("the error was catched")
-                            console.log("e: ", e);
-                        }
-                    }
-            }>get facts</button>
-
-  
-
-            {factsList===null?<p>error-op</p>:factsList}
+            {!facts.content && <p>here an a error</p>}
 
             <nav>
                 <button>
@@ -69,8 +66,7 @@ const Page1 = ()=>{
                 <button>
                     <NavLink to="/">Go to home </NavLink>
                 </button>
-                
-                
+                              
             </nav>
             <Outlet />
         </div>
