@@ -1,6 +1,6 @@
 
 import { NavLink, Outlet } from 'react-router-dom';
-import './privateRoute.scss'
+import './privateRoute.page.scss'
 
 export const PrivateRoutePage = () => {
 

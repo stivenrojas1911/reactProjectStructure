@@ -1,10 +1,16 @@
 import {createSlice} from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit'
 import {LoginState} from './../../models/store/login-state.model'
-
+import {UserModel} from './../../models/user.model'
   
   const initialLoginState: LoginState = {
     isLogin: false,
+    userData:{
+      firstName:'',
+      lastName:'',
+      email:''
+    }
+    
   }
 
 
@@ -13,13 +19,14 @@ import {LoginState} from './../../models/store/login-state.model'
     name:'entityA',
     initialState:initialLoginState,
     reducers:{
-        userNotLogged:(state, action: PayloadAction<number>)=>{ // action userNotLogged action
-            console.log('number in the execution of action:', action)
+        userNotLogged:(state)=>{ // action userNotLogged action
+            
             state.isLogin=false;
         },
-        userIsLoggeed:(state)=>{ // action userIsLogged action 
-          
+        userIsLoggeed:(state, action: PayloadAction<UserModel>)=>{ // action userIsLogged action 
+           console.log('**show the payload:', action)
             state.isLogin = true;
+            state.userData=action.payload
 
         },
         

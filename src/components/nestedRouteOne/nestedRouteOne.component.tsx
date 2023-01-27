@@ -1,4 +1,4 @@
-import './nestedRouteOne.scss'
+import './nestedRouteOne.component.scss'
 
 export const NestedRouteOneComponent = () => {
     return(

@@ -10,8 +10,8 @@ import {FactModel} from '../../models/fact.model';
 import SimpleBackdropComponent from '../../components/backdrop/backdrop.component'
 import { AsyncStatusEnum } from '../../enums/asyncStatusEnum';
 
+import { v4 as uuidv4 } from 'uuid';
 
-// import enum
 
 
 const Page1 = ()=>{
@@ -26,12 +26,13 @@ const Page1 = ()=>{
     const dispatch = useAppDispatch();//ok
     
     const facts = useAppSelector((state)=>state.facts)//ok
+    
 
     const handleSearchButtonClick = () =>{
 
         // here we can not put any business logic ** important
         // only we can have a SetState  of useState
-        // the bussiness have to be in the helpers
+        // the bussiness logic have to be in the helpers
         // Inside of any hook we can not put business logic
 
         dispatch(getFactsData({value:'',key:''})) 
@@ -49,7 +50,7 @@ const Page1 = ()=>{
             
             <button onClick={handleSearchButtonClick}>Search</button>
 
-            { facts.content &&  facts.content.map((fact:FactModel, index) => <ul key={index.toString()}>{fact.fact}</ul>)}
+            { facts.content &&  facts.content.map((fact:FactModel, index) => <ul key={uuidv4()}>😃{fact.fact}</ul>)}
 
             {!facts.content && <p>here an a error</p>}
 

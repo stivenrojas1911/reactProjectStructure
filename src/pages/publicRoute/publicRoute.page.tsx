@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import './publicRouter.scss'
+import './publicRouter.page.scss'
 
 export const PublicRouteComponent = () => {
    

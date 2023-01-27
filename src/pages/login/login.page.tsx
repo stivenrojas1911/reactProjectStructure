@@ -13,7 +13,7 @@ import { NavLink } from 'react-router-dom';
 import {FormComponent} from './../../components/form/form.component'
 
 //import styles
-import './login.scss'
+import './login.page.scss'
 
 
 export const LoginPage = () => {
@@ -33,10 +33,14 @@ export const LoginPage = () => {
              <FormComponent/>
  
              <button onClick={()=>{
-                                   dispatch(userIsLoggeed())
+                                   dispatch(userIsLoggeed({
+                                    lastName:'Rojas',
+                                    firstName:'Stiven',
+                                    email:'sorojasp@correo.udistrital.edu.co'
+                                   }))
                                    
                                    }} >Login</button>
-             <button onClick={()=>{dispatch(userNotLogged(34))}} >Log out</button>
+             <button onClick={()=>{dispatch(userNotLogged())}} >Log out</button>
              <nav className="navigation-bar">
                  <NavLink to="/login" className={(navData) => navData.isActive ? "selected-url" : "link" }>Login</NavLink>
                  <NavLink to="/" className={(navData) => navData.isActive ? "selected-url" : "link" }>Go to home</NavLink>
