@@ -48,7 +48,7 @@ const Page1 = ()=>{
             
             {facts.status=== AsyncStatusEnum.loading && <SimpleBackdropComponent/>}
             
-            <button onClick={handleSearchButtonClick}>Search</button>
+            <button onClick={handleSearchButtonClick}>Consume service</button>
 
             { facts.content &&  facts.content.map((fact:FactModel, index) => <ul key={uuidv4()}>😃{fact.fact}</ul>)}
 

@@ -22,7 +22,7 @@ export const HomePage = () => {
                <NavLink to="/login" className={(navData) => navData.isActive ? "selected-url" : "link" }>Go to login</NavLink>
                <NavLink to="/public-route" className={(navData) => navData.isActive ? "selected-url" : "link" }>Go to public route</NavLink>
                <NavLink to="/private-route" className={(navData) => navData.isActive ? "selected-url" : "link" }>Go to private route</NavLink>
-               <NavLink to="/stiven" className={(navData) => navData.isActive ? "selected-url" : "link" }>Go to Stiven</NavLink>
+               <NavLink to="/consumeService" className={(navData) => navData.isActive ? "selected-url" : "link" }>Go to Consume service</NavLink>
                <NavLink to="/404" className={(navData) => navData.isActive ? "selected-url" : "link" }>Go 404 page</NavLink>
                
            </nav>

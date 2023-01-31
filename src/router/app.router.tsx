@@ -12,7 +12,7 @@ import  App  from '../App'
 import BaseGuard from './guards/base.guard';
 
 
-// import stiven's components 
+// import consume service components 
 import Component1 from '../pages/page1/page1.page';
 import ComponentA from '../components/componentA/componentA.component';
 import ComponentB from '../components/componentB/componentB.component';
@@ -38,7 +38,7 @@ const AppRouter = () => {
                     <Route path="*" element={<Error404Page />} />
                 </Route>
 
-                <Route path="/stiven" element={<Component1 />}>
+                <Route path="/consumeService" element={<Component1 />}>
                     <Route path="componentA" element ={<ComponentA/>}></Route>
                     <Route path="componentB" element={<ComponentB/>}></Route>
                 </Route>
