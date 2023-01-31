@@ -18,6 +18,7 @@ const BaseGuard = ({ children }: IBaseGuardProps) => {
     const [ isLogged ] = useState<boolean>(logged);
 
     return isLogged ? children : <Navigate to="/login" />;
+
 }
 
 export default BaseGuard;  

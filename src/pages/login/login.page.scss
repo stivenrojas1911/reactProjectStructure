@@ -9,3 +9,16 @@
         margin: 0;
     }
 }
+
+.button {
+    width: 400px;
+    height: 45px;
+    border: 2px #565656 solid;
+    border-radius: 10px;
+    padding: 0 15px;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 18px;
+    background: darkcyan;
+    cursor: pointer;
+  }

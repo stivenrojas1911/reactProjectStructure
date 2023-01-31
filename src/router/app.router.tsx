@@ -17,6 +17,10 @@ import Component1 from '../pages/page1/page1.page';
 import ComponentA from '../components/componentA/componentA.component';
 import ComponentB from '../components/componentB/componentB.component';
 
+
+// pages imports
+import {DashboardPage} from './../pages/dashboard/dashboard.page'
+
 const AppRouter = () => {
     return (
         <BrowserRouter>
@@ -30,6 +34,7 @@ const AppRouter = () => {
                         <Route path="nested-route-one" element={<NestedRouteOneComponent />}/>
                         <Route path="nested-route-two" element={<NestedRouteTwoComponent />}/>
                     </Route>
+                    
                     <Route path="*" element={<Error404Page />} />
                 </Route>
 
